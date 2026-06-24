@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0f172a;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:600px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    color:white;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#94a3b8;
+    margin-bottom:25px;
+}
+
+.input-section{
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+#taskInput{
+    flex:1;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#1e293b;
+    color:white;
+    font-size:15px;
+}
+
+#taskInput::placeholder{
+    color:#94a3b8;
+}
+
+#addBtn{
+    border:none;
+    padding:14px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    font-weight:bold;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    transition:0.3s;
+}
+
+#addBtn:hover{
+    transform:translateY(-2px);
+}
+
+#taskList{
+    list-style:none;
+}
+
+#taskList li{
+    background:#1e293b;
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    animation:fadeIn .3s ease;
+}
+
+.task-text{
+    flex:1;
+    word-break:break-word;
+}
+
+.completed .task-text{
+    text-decoration:line-through;
+    opacity:0.6;
+}
+
+.actions{
+    display:flex;
+    gap:8px;
+}
+
+.complete-btn,
+.delete-btn{
+    border:none;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+.complete-btn{
+    background:#06b6d4;
+}
+
+.complete-btn:hover{
+    background:#0891b2;
+}
+
+.delete-btn{
+    background:#ef4444;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:500px){
+
+    .input-section{
+        flex-direction:column;
+    }
+
+    #addBtn{
+        width:100%;
+    }
+}
